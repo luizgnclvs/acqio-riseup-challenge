@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'latoheavy';
+    src: url('../assets/fonts/lato-heavy-webfont.woff2') format('woff2'),
+         url('../assets/fonts/lato-heavy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'latoregular';
+    src: url('../assets/fonts/lato-regular-webfont.woff2') format('woff2'),
+         url('../assets/fonts/lato-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'latosemibold';
+    src: url('../assets/fonts/lato-semibold-webfont.woff2') format('woff2'),
+         url('../assets/fonts/lato-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'latoblack';
+    src: url('../assets/fonts/lato-black-webfont.woff2') format('woff2'),
+         url('../assets/fonts/lato-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Acqio API - Teste</title>
+    <script src="./scripts/index.js" defer></script>
+    <link rel="stylesheet" href="./styles/index.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+    <link rel="icon" href="./assets/logo.png"/>
+</head>
+<body>
+    <div class="title">
+        <h1>Loja Virtual@exemplo</h1>
+        <div> <!-- * dummy icons para ilustrar opções comuns de lojas virtuais-->
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <span class="material-symbols-outlined">settings</span>
+            <span class="material-symbols-outlined">account_circle</span>
+            <span class="material-symbols-outlined">menu</span>
+        </div>
+    </div>
+    <form id="login" name="login"> <!-- * simulação de login na loja virtual -->
+        <span>Log-In</span>
+        <!-- * Credenciais de teste fornecidas pela Acqio -->
+        <!-- * client_id: 2a197f9a00140e557c627c2b4e38df35 -->
+        <!-- * client_secret: Aq935HOkr4QeeZWWoU_g9nEPmi -->
+        <div>
+            <label for="client-email">E-mail:</label>
+            <input type="text" name="client-email" required> <!-- * client_id -->
+        </div>
+        <div>
+            <label for="client-passphrase"> Senha:</label>
+            <input type="password" name="client-passphrase" required> <!-- * client_secret -->
+        </div>
+        <div class="remember-me-box">
+            <input type="checkbox" name="remember-me" value="true">
+            <label for="remember-me">Lembrar de mim</label>
+        </div>
+        <div class="buttons">
+            <button>Cadastrar</button> <!-- * dummy button para implementação de cadastro de usuário-->
+            <input type="submit" value="Entrar">
+        </div>
+        <a>Esqueceu sua senha?</a> <!-- * dummy link para implementação de redefinição de senha-->
+    </form>
+</body>
+</html>

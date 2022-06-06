@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acqio API - Teste</title>
+    <script src="../scripts/purchase-info.js" defer></script>
+    <link rel="stylesheet" href="../styles/purchase-info.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+    <link rel="icon" href="../assets/logo.png"/>
+</head>
+<body>
+    <div class="title">
+        <h1>Loja Virtual@exemplo</h1>
+        <div> <!-- * dummy icons para ilustrar opções comuns de lojas virtuais-->
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <span class="material-symbols-outlined">settings</span>
+            <span class="material-symbols-outlined">account_circle</span>
+            <span class="material-symbols-outlined">menu</span>
+        </div>
+    </div>
+    <form id="info" name="info"> <!-- * simulação do formulário de efetuação da compra -->
+        <h2>Total do carrinho: R$<span id="show-amount"></span></h2>
+        <input type="hidden" name="amount" id="amount">
+        <div id="user-info">
+            <h3>Informações Pessoais</h3>
+            <input type="hidden" id="purchase-email" name="email" value="">
+            <div>
+                <label for="first-name">Nome:</label>
+                <input type="text" name="first-name" required>
+            </div>
+            <div>
+                <label for="last-name">Sobrenome:</label>
+                <input type="text" name="last-name" required>
+            </div>
+            <div>
+                <label for="personalId">CPF/CNPJ</label>
+                <input type="number" name="personalId">
+            </div>
+            <div>
+                <label for="phone">Telefone:</label>
+                <input type="tel" name="phone" pattern="55[0-9]{2}9[0-9]{8}" required>
+            </div>
+            <div>
+                <input type="hidden" name="country" value="BR">
+            </div>
+            <div>
+                <label for="cep">CEP:</label>
+                <input type="number" name="cep" maxlength="7" required>
+            </div>
+            <div>
+                <label for="state">Estado:</label>
+                <select name="state" required>
+                    <option value="AL">AL</option>
+                    <option value="AC">AC</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MT">MT</option>
+                    <option value="MS">MS</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RR">RR</option>
+                    <option value="RO">RO</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                </select>
+            </div>
+            <div>
+                <label for="city">Cidade:</label>
+                <input type="text" name="city" required>
+            </div>
+            <div>
+                <label for="address">Endereço:</label>
+                <input type="text" name="adress" required>
+            </div>
+            <div>
+                <label for="address-2">Complemento:</label>
+                <input type="text" name="address-2">
+            </div>
+            <div class="same-address-box">
+                <input type="checkbox" id="same-address" name="same-address" value="yes" checked>
+                <label for="same-address">Utilizar o mesmo endereço de envio para cobrança?</label>
+            </div>
+            <div id="billing-address-box">
+                <h4>Endereço de cobrança</h4>
+                <div>
+                    <input type="hidden" name="billing-country" value="BR">
+                </div>
+                <div>
+                    <label for="billing-cep">CEP:</label>
+                    <input type="number" name="billing-cep" maxlength="7">
+                </div>
+                <div>
+                    <label for="billing-state">Estado:</label>
+                    <select name="billing-state">
+                        <option value="AL">AL</option>
+                        <option value="AC">AC</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RR">RR</option>
+                        <option value="RO">RO</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="billing-city">Cidade:</label>
+                    <input type="text" name="billing-city">
+                </div>
+                <div>
+                    <label for="billing-address">Endereço:</label>
+                    <input type="text" name="billing-adress">
+                </div>
+            </div>
+            <div class="buttons">
+                <input type="button" id="next" value="Próximo">
+            </div>
+        </div>
+        <div id="card-info">
+            <h3>Informações de Pagamento</h3>
+            <div>
+                <label for="installments">Parcelas:</label>
+                <select name="installments" required>
+                    <option id="installment-1" value="1" class="installment">× 1</option>
+                    <option id="installment-2" value="2" class="installment">× 2</option>
+                    <option id="installment-3" value="3" class="installment">× 3</option>
+                    <option id="installment-4" value="4" class="installment">× 4</option>
+                    <option id="installment-5" value="5" class="installment">× 5</option>
+                    <option id="installment-6" value="6" class="installment">× 6</option>
+                    <option id="installment-7" value="7" class="installment">× 7</option>
+                    <option id="installment-8" value="8" class="installment">× 8</option>
+                    <option id="installment-9" value="9" class="installment">× 9</option>
+                    <option id="installment-10" value="10" class="installment">× 10</option>
+                    <option id="installment-11" value="11" class="installment">× 11</option>
+                    <option id="installment-12" value="12" class="installment">× 12</option>
+                </select>
+            </div>
+            <div>
+                <label for="cardnumber">Número do cartão:</label>
+                <input type="number" name="cardnumber" required>
+            </div>
+            <div>
+                <label for="cardholder">Nome do titular:</label>
+                <input type="text" name="cardholder" required>
+            </div>
+            <div>
+                <span>Data de validade:</span>
+                <select name="expiration-month" class="month-input" required>
+                    <option selected disabled>Mês</option>
+                    <option value="01">1</option>
+                    <option value="02">2</option>
+                    <option value="03">3</option>
+                    <option value="04">4</option>
+                    <option value="05">5</option>
+                    <option value="06">6</option>
+                    <option value="07">7</option>
+                    <option value="08">8</option>
+                    <option value="09">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <select name="expiration-year" class="year-input" required>
+                    <option selected disabled>Ano</option>
+                    <option value="22">2022</option>
+                    <option value="23">2023</option>
+                    <option value="24">2024</option>
+                    <option value="25">2025</option>
+                    <option value="26">2026</option>
+                    <option value="27">2027</option>
+                    <option value="28">2028</option>
+                    <option value="29">2029</option>
+                    <option value="30">2030</option>
+                </select>
+            </div>
+            <div>
+                <label for="cvv">CVV:</label>
+                <input type="number" name="cvv" maxlength="3" required>
+            </div>
+            <div class="save-card-box">
+                <input type="checkbox" name="autocapture" id="auto-capture">
+                <label for="autocapture">Salvar cartão</label>
+            </div>
+            <div class="buttons">
+                <input type="button" id="previous" value="Anterior">
+                <input type="submit" value="Avançar">
+            </div>
+        </div>
+    </form>
+</body>
+</html>

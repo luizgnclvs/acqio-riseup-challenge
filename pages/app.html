@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="info" name="info" > <!-- * simulação do formulário de efetuação da compra -->
+        <div id="client-info" style="display: block;">
+            <h3>Informações Pessoais:</h3>
+            <div>
+                <label for="first_name">Nome:</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+            <div>
+                <label for="last_name">Sobrenome:</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+            <div>
+                <label for="phone">Telefone:</label>
+                <input type="tel" id=phone name="phone" required> <!-- pattern="+55\s[0-9]{2}\s9[0-9]{4}-[0-9]{4}" -->
+            </div>
+            <div>
+                <input type="hidden" id="country" name="country" value="BR">
+            </div>
+            <div>
+                <label for="cep">CEP:</label>
+                <input type="number" id="cep" name="cep" pattern="[0-9]{5}-[0-9]{2}" required>
+            </div>
+            <div>
+                <label for="state">Estado:</label>
+                <select id="state" name="state" required>
+                    <option value="AL">AL</option>
+                    <option value="AC">AC</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MT">MT</option>
+                    <option value="MS">MS</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RR">RR</option>
+                    <option value="RO">RO</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                </select>
+            </div>
+            <div>
+                <label for="city">Cidade:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div>
+                <label for="address">Endereço:</label>
+                <input type="text" id="address" name="adress" required>
+            </div>
+            <div>
+                <label for="appendix">Complemento:</label>
+                <input type="text" id="appendix" name="appendix" required>
+            </div>
+            <div>
+                <input type="checkbox" id="same_address" name="same_address" checked>
+                <label for="same_address">Utilizar o mesmo endereço de envio para cobrança?</label>
+            </div>
+            <div id="same_address_box" style="display: none;">
+                <br>
+                <br>
+                <div>
+                    <input type="hidden" id="billing_country" name="billing_country" value="BR">
+                </div>
+                <div>
+                    <label for="billing_cep">CEP:</label>
+                    <input type="number" id="billing_cep" name="billing_cep" pattern="[0-9]{5}-[0-9]{2}">
+                </div>
+                <div>
+                    <label for="billing_state">Estado:</label>
+                    <select id="billing_state" name="billing_state">
+                        <option value="AL">AL</option>
+                        <option value="AC">AC</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RR">RR</option>
+                        <option value="RO">RO</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="billing_city">Cidade:</label>
+                    <input type="text" id="billing_city" name="billing_city">
+                </div>
+                <div>
+                    <label for="billing_address">Endereço:</label>
+                    <input type="text" id="billing_address" name="billing_adress">
+                </div>
+            </div>
+            <input type="button" id="next" value="Próximo">
+        </div>
+        <div id="purchase-info" >
+            <h3>Informações Financeiras:</h3>
+            <div>
+                <input type="hidden" id="price" name="price" value="11111"> <!-- ? amountE2 || valor fictício -->
+            </div>
+            <div>
+                <label for="installments">Parcelas:</label>
+                <select id="installments" name="installments" required>
+                    <option value="1">× 1</option>
+                    <option value="2">× 2</option>
+                    <option value="3">× 3</option>
+                    <option value="4">× 4</option>
+                    <option value="5">× 5</option>
+                    <option value="6">× 6</option>
+                    <option value="7">× 7</option>
+                    <option value="8">× 8</option>
+                    <option value="9">× 9</option>
+                    <option value="10">× 10</option>
+                    <option value="11">× 11</option>
+                    <option value="12">× 12</option>
+                </select>
+            </div>
+            <div>
+                <label for="cardnumber">Número do cartão:</label>
+                <input type="number" id="cardnumber" name="cardnumber" required>
+            </div>
+            <div>
+                <label for="cardholder">Nome como escrito no cartão:</label>
+                <input type="text" id="cardholder" name="cardholder" required>
+            </div>
+            <div>
+                <label for="expiration">Validade:</label>
+                <input type="month" id="expiration" name="expiration" required>
+            </div>
+            <div>
+                <label for="cvv">CVV:</label>
+                <input type="number" id="cvv" name="cvv" pattern="[0-9]{3}" required>
+            </div>
+            <div>
+                <input type="checkbox" id="autocapture" name="autocapture"> <!-- ? autocapture = salvar e preencher as informações do cartão automaticamente? -->
+                <label for="autocapture">Salvar cartão:</label>
+            </div>
+            <input type="button" id="previous" value="Anterior">
+            <input type="submit" value="Avançar">
+        </div>
+    </form>
+</body>
+</html>
